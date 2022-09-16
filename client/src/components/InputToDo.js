@@ -1,4 +1,5 @@
 import React, { useState } from "react";
+import {fetchPath} from "./hooks/FetchPaths"
 
 function InputToDo() {
   const [description, setDescription] = useState("");
@@ -6,7 +7,7 @@ function InputToDo() {
     e.preventDefault();
     try {
       const body = { description };
-      const response = await fetch("http://localhost:5000/todos", {
+      const response = await fetch(fetchPath, {
         method: "POST",
         headers: { "content-Type": "application/json" },
         body: JSON.stringify(body),

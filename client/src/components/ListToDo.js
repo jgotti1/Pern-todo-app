@@ -1,4 +1,5 @@
 import React, { useEffect, useState } from "react";
+import { fetchPath } from "./hooks/FetchPaths";
 
 import Edit from "./EditToDo";
 
@@ -8,7 +9,7 @@ function ListToDo() {
   //delete to do
   const handleDelete = async (id) => {
     try {
-      const response = await fetch(`http://localhost:5000/todos/${id}`, { method: "DELETE" });
+      const response = await fetch(`${fetchPath}/${id}`, { method: "DELETE" });
 
       if (response.ok) {
         setTodos(toDos.filter((todo) => todo.todo_id !== id));
@@ -21,7 +22,7 @@ function ListToDo() {
   // get all items
   const getTodos = async () => {
     try {
-      const response = await fetch("http://localhost:5000/todos");
+      const response = await fetch(fetchPath);
       const jsonData = await response.json();
 
       setTodos(jsonData);
