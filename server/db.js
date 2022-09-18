@@ -1,5 +1,7 @@
 const Pool = require("pg").Pool;
 require("dotenv").config();
+
+
 const dbPernToDo = new Pool({
   user: process.env.DB_USERNAME,
   password: process.env.DB_PASSWORD,

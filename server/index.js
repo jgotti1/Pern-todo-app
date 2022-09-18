@@ -46,7 +46,7 @@ app.delete("/todos/:id", async (req, res) => {
     const { id } = req.params;
 
     const deleteTodo = await dbPernToDo.query("DELETE FROM todo WHERE todo_id = $1", [id]);
-    res.json("delete complete!");
+    res.json(`${deleteTodo} delete complete!`);
   } catch (error) {
     console.log(error.message);
   }
@@ -58,7 +58,7 @@ app.put("/todos/:id", async (req, res) => {
     const { id } = req.params;
     const { description } = req.body;
     const updateTodo = await dbPernToDo.query("UPDATE todo SET description = $1 WHERE todo_id = $2", [description, id]);
-    res.json("update complete!");
+    res.json(`${updateTodo} update complete!`);
   } catch (error) {
     console.log(error.message);
   }
