@@ -5,8 +5,13 @@
 // //+++++++++++++++++++PROD PATHS ++++++++++++++++++++
 //John Cyclic
 
-export const fetchPath = "https://zany-erin-tick-hem.cyclic.app/todos";
+// export const fetchPath = "https://zany-erin-tick-hem.cyclic.app/todos";
 
 //Marcie Cyclic host
 
 // export const fetchPath = "https://sleepy-sandals-seal.cyclic.app/todos";
+
+//AWS Deploy
+// ++++++++++++++++ DEV PATHS ++++++++++++++++
+
+export const fetchPath = "/todos";

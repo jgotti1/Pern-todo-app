@@ -1,6 +1,7 @@
 const express = require("express");
 const app = express();
 const cors = require("cors");
+const path = require("path");
 require("dotenv").config();
 const dbPernToDo = require("./db");
 const PORT = process.env.PORT;
@@ -8,6 +9,11 @@ const PORT = process.env.PORT;
 //middleware
 app.use(cors());
 app.use(express.json());
+
+// serve static front end in production mode
+if (process.env.NODE_ENV === "production") {
+  app.use(express.static(path.join(__dirname, "public", "build")));
+}
 
 //************ROUTES**********
 

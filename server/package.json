@@ -5,7 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
-    "startx": "nodemon index.js",
+    "startdev": "nodemon index.js",
     "dev": "nodemon index.js"
   },
   "author": "",
